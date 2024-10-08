@@ -58,3 +58,6 @@ indices = np.where(y2 > 6)
 contar_cincos = np.sum(y2==5)
 print("Coso",indices)
 print("Cosos",contar_cincos)
+
+zeros = np.zeros((2,4))
+print(zeros)
