@@ -45,19 +45,23 @@ L2 = [1,2,3,4,5,6,7,8]
 import numpy as np
 n = 100
 x = np.ones(n)
-print(x)
+# print(x)
 
 start = 3
 y = np.arange(start,3 * (n+1),3)
-print(y)
+#print(y)
 
 y2 = np.round(15 * np.sin(y))
-print(y2)
+#print(y2)
 
-indices = np.where(y2 > 6)
-contar_cincos = np.sum(y2==5)
-print("Coso",indices)
-print("Cosos",contar_cincos)
+# indices = np.where(y2 > 6)
+# contar_cincos = np.sum(y2==5)
+# print("Coso",indices)
+# print("Cosos",contar_cincos)
 
-zeros = np.zeros((2,4))
-print(zeros)
+
+M = np.vstack([y,y2])
+print(M)
+
+M2 = np.column_stack([y.T, y2.T])
+print(M2)
