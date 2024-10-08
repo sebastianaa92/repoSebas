@@ -1,0 +1,17 @@
+import math
+
+a = int(input("Ingrese el valor del primer lado: "))
+b = int(input("Ingrese el valor del segundo lado: "))
+c = int(input("Ingrese el valor del tercer lado: "))
+
+def mi_funcion():
+    if a == 90 or b == 90 or c == 90:
+        print("Es rectangulo")
+    elif a > 90 or b > 90 or c > 90:
+        if a < 90 or b < 90 or c < 90:
+            print("Es obtusángulo")
+    elif a < 90 or b < 90 or c <90:
+        print("Es acutángulo")
+
+
+mi_funcion()
