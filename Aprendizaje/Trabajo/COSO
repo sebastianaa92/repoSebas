@@ -1,0 +1,7 @@
+with open('/home/sebastian/Downloads/BI_EST_MRTN_APOY.csv', 'r', encoding='utf-8') as file:
+    content = file.read()
+
+# Imprimir los caracteres especiales
+for i, char in enumerate(content):
+    if ord(char) > 127:  # Caracteres no ASCII
+        print(f'Caracter especial encontrado: {char} en la posición {i}')

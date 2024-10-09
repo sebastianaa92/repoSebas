@@ -1,0 +1,64 @@
+# Dataset de jugadores en WoW
+records = [
+    {'nombre': 'Thrall', 'raza': 'Orco', 'clase': 'Chamán', 'tz': 'PST'},
+    {'nombre': 'Jaina', 'raza': 'Humano', 'clase': 'Maga', 'tz': 'EST'},
+    {'nombre': 'Sylvanas', 'raza': 'Elfo', 'clase': 'Cazadora', 'tz': 'CET'},
+    {'nombre': 'Anduin', 'raza': 'Humano', 'clase': 'Sacerdote', 'tz': 'GMT'},
+    {'nombre': 'Arthas', 'raza': 'Humano', 'clase': 'Caballero de la Muerte', 'tz': 'CET'},
+    {'nombre': 'Malfurion', 'raza': 'Elfo', 'clase': 'Druida', 'tz': 'EST'},
+    {'nombre': 'Vol\'jin', 'raza': 'Trol', 'clase': 'Cazador de Sombras', 'tz': 'PST'},
+    {'nombre': 'Gul\'dan', 'raza': 'Orco', 'clase': 'Brujo', 'tz': 'EST'},
+    {'nombre': 'Garrosh', 'raza': 'Orco', 'clase': 'Guerrero', 'tz': 'PST'},
+    {'nombre': 'Varian', 'raza': 'Humano', 'clase': 'Guerrero', 'tz': 'EST'},
+    {'nombre': 'Tyrande', 'raza': 'Elfo', 'clase': 'Sacerdotisa', 'tz': 'CET'},
+    {'nombre': 'Rexxar', 'raza': 'Ogro', 'clase': 'Cazador', 'tz': 'GMT'},
+    {'nombre': 'Illidan', 'raza': 'Elfo', 'clase': 'Cazador de Demonios', 'tz': 'CET'},
+    {'nombre': 'Kael\'thas', 'raza': 'Elfo', 'clase': 'Mago', 'tz': 'PST'},
+    {'nombre': 'Bolvar', 'raza': 'Humano', 'clase': 'Caballero de la Muerte', 'tz': 'EST'},
+    {'nombre': 'Lor\'themar', 'raza': 'Elfo', 'clase': 'Cazador', 'tz': 'CET'},
+    {'nombre': 'Turalyon', 'raza': 'Humano', 'clase': 'Paladín', 'tz': 'GMT'},
+    {'nombre': 'Thrall', 'raza': 'Orco', 'clase': 'Chamán', 'tz': 'PST'},
+    {'nombre': 'Jaina', 'raza': 'Humano', 'clase': 'Maga', 'tz': 'EST'},
+    {'nombre': 'Sylvanas', 'raza': 'Elfo', 'clase': 'Cazadora', 'tz': 'CET'},
+    {'nombre': 'Anduin', 'raza': 'Humano', 'clase': 'Sacerdote', 'tz': 'GMT'},
+    {'nombre': 'Arthas', 'raza': 'Humano', 'clase': 'Caballero de la Muerte', 'tz': 'CET'},
+    {'nombre': 'Malfurion', 'raza': 'Elfo', 'clase': 'Druida', 'tz': 'EST'},
+    {'nombre': 'Vol\'jin', 'raza': 'Trol', 'clase': 'Cazador de Sombras', 'tz': 'PST'},
+    {'nombre': 'Gul\'dan', 'raza': 'Orco', 'clase': 'Brujo', 'tz': 'EST'},
+    {'nombre': 'Garrosh', 'raza': 'Orco', 'clase': 'Guerrero', 'tz': 'PST'},
+    {'nombre': 'Varian', 'raza': 'Humano', 'clase': 'Guerrero', 'tz': 'EST'},
+    {'nombre': 'Tyrande', 'raza': 'Elfo', 'clase': 'Sacerdotisa', 'tz': 'CET'},
+    {'nombre': 'Rexxar', 'raza': 'Ogro', 'clase': 'Cazador', 'tz': 'GMT'},
+    {'nombre': 'Illidan', 'raza': 'Elfo', 'clase': 'Cazador de Demonios', 'tz': 'CET'},
+    {'nombre': 'Kael\'thas', 'raza': 'Elfo', 'clase': 'Mago', 'tz': 'PST'},
+    {'nombre': 'Bolvar', 'raza': 'Humano', 'clase': 'Caballero de la Muerte', 'tz': 'EST'},
+    {'nombre': 'Lor\'themar', 'raza': 'Elfo', 'clase': 'Cazador', 'tz': 'CET'},
+    {'nombre': 'Turalyon', 'raza': 'Humano', 'clase': 'Paladín', 'tz': 'GMT'}
+]
+
+time_zones= [rec['tz'] for rec in records if 'tz' in rec ]
+print("La lista de zonas horarias es: ", time_zones)
+
+def get_counts(sequence):
+    counts= {}
+    for x in sequence:
+        if x in counts:
+            counts[x] += 1
+        else:
+            counts[x] = 1
+    return counts
+
+conteo_zonas_horarias = get_counts(time_zones)
+print("Conteo de zonas horarias es:", conteo_zonas_horarias)
+
+counts = get_counts(time_zones)
+print(counts['EST'])
+
+def top_counts(count_dict, n=10):
+    value_key_pairs = [(count,tz) for tz, count in count_dict.items()]
+    value_key_pairs.sort()
+    return value_key_pairs[-n:]
+
+zonas_mas_comunes = top_counts(conteo_zonas_horarias, n=3)
+print("zonas horarias más comunes:", zonas_mas_comunes)
+

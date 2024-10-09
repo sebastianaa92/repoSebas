@@ -1,0 +1,97 @@
+import random
+
+papel = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+
+piedra= '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+tijeras ='''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+figuras = [piedra,papel,tijeras]
+eleccion = int(input("Ingrese su elección:\n"))
+eleccion_maquina = random.randint(0, 2)
+print(figuras[eleccion])
+
+#MI SOLUCIÓN
+
+# if  eleccion == 0:
+#     if eleccion_maquina == 2:
+#         eleccion = piedra
+#         eleccion_maquina = tijeras 
+#         print(eleccion,eleccion_maquina,"\n Has ganado ")
+#     elif eleccion_maquina == 1:
+#         eleccion = piedra
+#         eleccion_maquina = papel 
+#         print(eleccion,eleccion_maquina,"\n Has perdido ")
+#     elif eleccion_maquina == 0:
+#         eleccion = piedra
+#         eleccion_maquina = piedra
+#         print(eleccion,eleccion_maquina,"Empate")
+# elif eleccion == 1:
+#     if eleccion_maquina == 0:
+#         eleccion = papel
+#         eleccion_maquina = piedra
+#         print(eleccion,eleccion_maquina,"\n Has ganado ")
+#     elif eleccion_maquina == 2:
+#         eleccion = tijeras
+#         eleccion_maquina = 2
+#         print(eleccion,eleccion_maquina,"\n Has perdido ")
+#     elif eleccion_maquina == 1:
+#         eleccion = papel
+#         eleccion_maquina = papel
+#         print(eleccion,eleccion_maquina,"Empate")
+# elif eleccion == 2:
+#     eleccion = tijeras
+#     if eleccion_maquina == 1:
+#         eleccion_maquina = papel
+#         print(eleccion,eleccion_maquina,"\n Has ganado ")
+#     elif eleccion_maquina == 0:
+#         eleccion_maquina = piedra
+#         print(eleccion,eleccion_maquina,"\n Has perdido ")
+#     elif eleccion_maquina == 2:
+#         eleccion_maquina = tijeras
+#         print(eleccion,eleccion_maquina,"Empate")
+# else: print("Ingresaste el numero errado, perdiste pedazo de puto")
+
+
+
+#SOLUCIÓN DE UDEMY
+
+print(f"Eleccion de la máquina: ")
+print(figuras[eleccion_maquina])
+
+if eleccion == 0 and eleccion_maquina == 2:
+    print("Ganaste, pedazo de trolo")
+elif eleccion_maquina == 0 and eleccion == 2:
+    print("Perdiste putito")
+elif eleccion_maquina > eleccion:
+    print("Perdiste pedazo de puto")
+elif eleccion > eleccion_maquina:
+    print("Yo gano")
+elif eleccion_maquina == eleccion:
+    print("Empate")
+else: print("Mete el número correcto burro")
+
+
+ 

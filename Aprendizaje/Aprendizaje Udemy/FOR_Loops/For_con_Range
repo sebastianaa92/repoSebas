@@ -1,0 +1,12 @@
+#EJEMPLO UDEMY
+for number in range(1, 11, 3):
+    print(number)
+
+
+#EJERCICIO PRACTICA HECHO POR MI
+lista_recta = 0
+lista_reves = 0
+
+for conteo_derecho in range (1,101):
+    lista_recta += conteo_derecho
+print(lista_recta)

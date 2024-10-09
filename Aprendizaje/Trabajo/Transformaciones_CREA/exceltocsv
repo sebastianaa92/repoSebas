@@ -1,0 +1,11 @@
+import pandas as pd
+import csv as csv
+
+excel = r'/home/sebastian/Downloads/BI_EST_GDE_CTRL.xlsx'
+csva = r'/home/sebastian/Downloads/BI_EST_GDE_CTRL.csv'
+columnas_str = ['ID_CURSO','EMPLID_LIDER']
+
+df = pd.read_excel(excel, dtype = {col: str for col in columnas_str})
+df.to_csv(csva, sep = '|', index = False)
+
+print(f'Archivo convertido y guardado en: {csv}')
